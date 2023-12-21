@@ -1,0 +1,1 @@
+# grafana-spraql-data-source-plugin
