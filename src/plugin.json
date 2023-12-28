@@ -2,15 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
   "type": "datasource",
   "name": "Sparql",
-  "id": "fau-sparql-datasource",
+  "id": "admin-sparql-datasource",
   "metrics": true,
   "backend": true,
   "executable": "gpx_sparql",
   "info": {
     "description": "It is a spraql datasource plugin",
     "author": {
-      "name": "Fau"
+      "name": "admin"
+      
     },
+    
     "keywords": ["datasource"],
     "logos": {
       "small": "img/logo.svg",
