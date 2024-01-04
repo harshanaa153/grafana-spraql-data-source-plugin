@@ -16,7 +16,7 @@ const Formats = [
 ] as Array<SelectableValue<Format>>;
 
 export class QueryEditor extends PureComponent<Props> {
-  onrdfQueryChange = (value: string | undefined) => {
+  onRdfQueryChange = (value: string | undefined) => {
     const { onChange, query } = this.props;
     onChange({ ...query, rdfQuery: value || '' });
   };
@@ -37,8 +37,9 @@ export class QueryEditor extends PureComponent<Props> {
   render() {
     return (
       <div>
-        <CodeEditor height={"240px"} onEditorDidMount={ (editor) => { editor.onDidChangeModelContent (() => {this.onrdfQueryChange(editor.getValue())})}} monacoOptions={{ minimap: {enabled : false}, automaticLayout: true}} value={this.props.query.rdfQuery || ''} language={'rdf'} />
-        <InlineFieldRow>
+        <CodeEditor height={"240px"} onEditorDidMount={(editor) => {editor.onDidChangeModelContent(() => {this.onRdfQueryChange(editor.getValue());});}}monacoOptions={{ minimap: { enabled: false }, automaticLayout: true }}value={this.props.query.rdfQuery || ''}language={'sparql'} // Set the language to SPARQL
+        />
+          <InlineFieldRow>
           <InlineFormLabel width={5}>Format</InlineFormLabel>
           <Select
             className="width-14"
